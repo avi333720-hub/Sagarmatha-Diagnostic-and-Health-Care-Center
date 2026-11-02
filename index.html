@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sagarmatha Diagnostic and Health Care Center</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="syncst" class="noprint" style="position:fixed;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:50;background:var(--card);border:1px solid var(--bd);border-radius:99px;padding:4px 12px;font-size:.8rem;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.15);color:#b7791f;max-width:85vw">● …</div>
+
+<!-- LOGIN -->
+<div id="loginView" class="wrap login hide">
+  <div class="card">
+    <h1><span class="heart">🏥</span> Sagarmatha Diagnostic and Health Care Center</h1>
+    <svg class="ecg" viewBox="0 0 400 60" aria-hidden="true"><path pathLength="1" d="M0 30H110L125 30L135 8L150 52L162 18L172 30H260L275 30L285 8L300 52L312 18L322 30H400"/></svg>
+    <p style="color:var(--mu);margin-top:0">Golbazar · Staff login</p>
+    <p style="margin:-6px 0 12px"><span class="tag">Sagarmatha Digital X-Ray</span></p>
+    <label>Username<input id="u" autocomplete="username"></label>
+    <label style="margin-top:10px">Password<input id="p" type="password" autocomplete="current-password"></label>
+    <div class="err" id="lerr"></div>
+    <button class="btn" style="width:100%" onclick="login()">Sign in</button>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appView">
+<header><div class="wrap">
+  <span class="brand"><span class="heart">🏥</span> Sagarmatha Diagnostic and Health Care Center</span>
+  <nav>
+    <button data-v="home" class="on">About</button>
+    <button data-v="bill" class="staff hide">Bills</button>
+    <button data-v="new" class="staff hide">New report</button>
+    <button data-v="list" class="staff hide">Reports</button>
+    <button data-v="ref" class="staff hide">Referred</button>
+    <button data-v="acct" class="staff hide">Account</button>
+  </nav>
+  <button class="btn pub" onclick="showLogin()">Staff login</button>
+  <button class="btn alt staff hide" onclick="logout()">Logout</button>
+</div></header>
+
+<main class="wrap">
+
+<section id="v-home">
+  <div class="card hero">
+    <span class="fl" style="left:6%;top:14%">✚</span>
+    <span class="fl" style="right:8%;top:10%;animation-delay:1.2s">🩺</span>
+    <span class="fl" style="right:22%;bottom:12%;animation-delay:2.4s">✚</span>
+    <span class="fl" style="left:30%;bottom:8%;animation-delay:3.1s">💊</span>
+    <span class="tag" style="margin-bottom:8px">☢ Sagarmatha Digital X-Ray, Golbazar</span>
+    <h1>Welcome to Sagarmatha Diagnostic and Health Care Center</h1>
+    <p>We provide digital diagnostic imaging with careful, safe and quick reporting. Visit us at Golbazar for X-ray and video X-ray services.</p>
+    <svg class="ecg" viewBox="0 0 400 60" aria-hidden="true"><path pathLength="1" d="M0 30H110L125 30L135 8L150 52L162 18L172 30H260L275 30L285 8L300 52L312 18L322 30H400"/></svg>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">X-Ray</span>
+      <svg class="anim" viewBox="0 0 120 110" aria-hidden="true"><rect x="4" y="4" width="112" height="102" rx="10" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M60 14V96"/><path d="M60 28Q36 28 26 46"/><path d="M60 28Q84 28 94 46"/><path d="M60 44Q38 44 30 62"/><path d="M60 44Q82 44 90 62"/><path d="M60 60Q42 60 36 76"/><path d="M60 60Q78 60 84 76"/></g><rect class="scanbar" x="8" y="8" width="104" height="6" rx="3" fill="currentColor" opacity=".7"/></svg>
+      <h2 style="margin-top:8px">What is an X-ray?</h2>
+      <p>An X-ray uses a small, controlled dose of radiation to take a still picture of the inside of the body. It is quick, painless and widely used.</p>
+      <p><b>Common uses:</b> fractures and joint problems, chest and lung conditions (pneumonia, TB), dental and sinus views, abdomen and spine.</p>
+      <p><b>Preparation:</b> remove metal items (jewellery, belts). Tell the staff if you may be pregnant.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Video X-Ray</span>
+      <svg class="anim" viewBox="0 0 120 110" aria-hidden="true"><rect x="4" y="4" width="112" height="102" rx="10" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/><rect x="54" y="12" width="12" height="38" rx="6" fill="currentColor" opacity=".8"/><circle cx="60" cy="50" r="8" fill="currentColor"/><g class="lower"><rect x="54" y="50" width="12" height="46" rx="6" fill="currentColor" opacity=".8"/></g><circle class="rec" cx="100" cy="18" r="5" fill="#e53935"/><text x="16" y="22" font-size="10" font-weight="700" fill="currentColor">LIVE</text></svg>
+      <h2 style="margin-top:8px">What is a video X-ray?</h2>
+      <p>Video X-ray (fluoroscopy) shows live, moving images of organs and joints, so the doctor can watch function in real time.</p>
+      <p><b>Common uses:</b> swallowing studies, barium swallow/meal, joint movement, guiding injections and catheters.</p>
+      <p><b>Preparation:</b> some studies need fasting or a contrast drink. Staff will give instructions before the test.</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Safety</h3>
+    <p style="margin:0;color:var(--mu)">Doses are kept as low as reasonably achievable. Pregnant women should always inform the radiographer before any imaging.</p>
+  </div>
+  <div class="card row" style="gap:14px;flex-wrap:nowrap">
+    <span class="pin" aria-hidden="true">📍</span>
+    <div><h3 style="margin-bottom:2px">Address</h3>
+    <p style="margin:0"><b>Sagarmatha Diagnostic and Health Care Center</b><br>Sagarmatha Digital X-Ray<br>Golbazar-6, Siraha, Nepal<br>📞 Mobile: 9811363762 / 9842362472</p></div>
+  </div>
+</section>
+
+<section id="v-new" class="hide">
+  <div class="card">
+    <h2 id="formTitle">New patient report</h2>
+    <form onsubmit="return false" id="f" class="grid">
+      <label>Patient name<input id="f_name" required></label>
+      <label>Age<input id="f_age" type="number" min="0" max="120"></label>
+      <label>Sex<select id="f_sex"><option>Male</option><option>Female</option><option>Other</option></select></label>
+      <label>Phone<input id="f_phone" type="tel"></label>
+      <label>Exam type<select id="f_type"><option>X-Ray</option><option>Video X-Ray</option></select></label>
+      <label style="grid-column:1/-1">Selected body parts / study <small>(one per line)</small><textarea id="f_part" rows="4" placeholder="Tick the X-ray types below — they will appear here, one on each line" oninput="syncChips()"></textarea></label>
+      <label>Date<input id="f_date" type="date"></label>
+      <label>Referred by<input id="f_ref" list="refList" autocomplete="off" placeholder="Doctor / clinic name"><datalist id="refList"></datalist></label>
+    </form>
+    <div style="margin-top:14px;border:2px solid var(--pr);border-radius:12px;padding:12px"><h3 style="margin:0 0 2px;color:var(--pr)">🩻 Select type of X-ray</h3><p style="margin:0 0 6px;color:var(--mu);font-size:.88rem">Tick one or more. Each selected X-ray is listed on its own line in the box above.</p><div id="partChips" style="max-height:340px;overflow-y:auto"></div></div>
+    <label style="margin-top:12px">Impression / advice<textarea id="f_imp" rows="3"></textarea></label>
+    <label style="margin-top:12px">Attach image or video (optional, small files only)<input id="f_file" type="file" accept="image/*,video/*"></label>
+    <div class="err" id="ferr"></div>
+    <div class="row"><button class="btn" onclick="saveReport()">Save</button><button class="btn" onclick="saveReport(true)">Save &amp; Print</button><button class="btn alt" onclick="resetForm()">Clear</button></div>
+  </div>
+</section>
+
+<section id="v-ref" class="hide">
+  <div class="card">
+    <h2>Referred by (<span id="rcount">0</span>)</h2>
+    <p style="color:var(--mu);margin-top:0">Names are taken from the “Referred by” field of patient reports. Tap a name to see the patients they referred.</p>
+    <input id="rq" placeholder="Search referrer or patient name…" oninput="renderRef()" style="margin-bottom:12px">
+    <div id="rlist"></div>
+    <p id="rempty" style="color:var(--mu)" class="hide">No referrals found. Fill “Referred by” when saving a patient report.</p>
+  </div>
+</section>
+
+<section id="v-bill" class="hide">
+  <div class="card">
+    <h2 id="bTitle">Add bill</h2>
+    <div class="grid">
+      <label>Patient name<input id="b_name"></label>
+      <label>Phone<input id="b_phone" type="tel"></label>
+      <label>Date<input id="b_date" type="date"></label>
+    </div>
+    <h3 style="margin-top:14px">Items</h3>
+    <div id="b_items"></div>
+    <button class="btn alt" style="margin-top:8px" onclick="addItem()">+ Add item</button>
+    <div class="grid" style="margin-top:14px">
+      <label>Discount (Rs.)<input id="b_disc" type="number" min="0" value="0" oninput="calcBill()"></label>
+      <label>Paid (Rs.)<input id="b_paid" type="number" min="0" value="0" oninput="calcBill()"></label>
+    </div>
+    <p style="margin:12px 0 4px"><b>Total:</b> Rs. <span id="b_total">0</span> &nbsp; <b>Due:</b> Rs. <span id="b_due">0</span></p>
+    <div class="err" id="b_err"></div>
+    <div class="row"><button class="btn" onclick="saveBill()">Save bill</button><button class="btn alt" onclick="resetBill()">Clear</button></div>
+  </div>
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h2 style="margin:0">All bills (<span id="bcount">0</span>)</h2>
+      <div class="row noprint">
+        <button class="btn alt" onclick="exportBills()">Backup (download)</button>
+        <button class="btn alt" onclick="document.getElementById('bimp').click()">Restore</button>
+        <input id="bimp" type="file" accept=".json" class="hide" onchange="importBills(this)">
+      </div>
+    </div>
+    <div class="row" style="margin:12px 0">
+      <input id="bq" placeholder="Search bill no, name, phone, item… (results appear as you type)" oninput="renderBills(true)" style="flex:2;min-width:160px">
+      <select id="bf" onchange="renderBills()" style="flex:1;min-width:120px"><option value="">All</option><option value="due">Due only</option><option value="paid">Fully paid</option></select>
+    </div>
+    <div class="tbl"><table><thead><tr><th>Bill no</th><th>Date</th><th>Patient</th><th>Phone</th><th>Total</th><th>Due</th><th></th></tr></thead><tbody id="brows"></tbody></table></div>
+    <p id="bempty" style="color:var(--mu)" class="hide">No bills found.</p>
+  </div>
+  <div id="bview" class="card hide"></div>
+</section>
+
+<section id="v-acct" class="hide">
+  <div class="card" style="max-width:460px">
+    <h2>Change username &amp; password</h2>
+    <label>Current password<input id="a_cur" type="password" autocomplete="current-password"></label>
+    <label style="margin-top:10px">New username<input id="a_user" autocomplete="username"></label>
+    <label style="margin-top:10px">New password <small style="color:var(--mu)">(leave blank to keep current)</small><input id="a_new" type="password" autocomplete="new-password"></label>
+    <label style="margin-top:10px">Confirm new password<input id="a_conf" type="password" autocomplete="new-password"></label>
+    <div class="err" id="a_msg"></div>
+    <button class="btn" onclick="saveCred()">Save changes</button>
+  </div>
+</section>
+
+<section id="v-list" class="hide">
+  <div class="card">
+    <div class="row" style="justify-content:space-between">
+      <h2 style="margin:0">Saved reports <span class="tag" id="count">0</span></h2>
+      <div class="row noprint">
+        <button class="btn alt" onclick="exportJSON()">Backup (download)</button>
+        <button class="btn alt" onclick="document.getElementById('imp').click()">Restore</button>
+        <input id="imp" type="file" accept=".json" class="hide" onchange="importJSON(this)">
+      </div>
+    </div>
+    <div class="row" style="margin:12px 0">
+      <input id="q" placeholder="Search name, phone, exam…" oninput="renderList()" style="flex:2;min-width:160px">
+      <select id="ft" onchange="renderList()" style="flex:1;min-width:120px"><option value="">All types</option><option>X-Ray</option><option>Video X-Ray</option></select>
+    </div>
+    <div class="tbl"><table><thead><tr><th>ID</th><th>Date</th><th>Patient</th><th>Type</th><th>Study</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <p id="empty" style="color:var(--mu)" class="hide">No reports found.</p>
+  </div>
+  <div id="view" class="card hide"></div>
+</section>
+
+</main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
